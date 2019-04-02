@@ -26,13 +26,12 @@
   <script>
   function myFunction() {
     var scale = document.getElementById("scale").value;
-    document.forms['tempForm']['round'].value;
-    var text = "";
-  var i;
-  for (i = 0; i < x.length ;i++) {
-    text += x.elements[i].value + "<br>";
-  }
-  document.getElementById("demo").innerHTML = text;
+    var round = document.forms['tempForm']['round'].value;
+    var temp = document.getElementById("temp").value;
+
+    // If-lause, joka tutkii, mikä muunnos pitää tehdä
+
+  document.getElementById("demo").innerHTML = temp;
 }
   </script>
 </body>
