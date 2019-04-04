@@ -17,9 +17,9 @@
          <input id="temp" type="text" name="number" value="">
          <input type="button" onclick="myFunction()" value="Muunna"><br/>
 
-        <input type="radio" name="round" value="1 desimaali" checked> 1 desimaali<br>
-        <input type="radio" name="round" value="2 desimaali"> 2 desimaali<br>
-        <input type="radio" name="round" value="3 desimaali"> 3 desimaali<br><br>
+        <input type="radio" name="round" value="10" checked> 1 desimaali<br>
+        <input type="radio" name="round" value="100"> 2 desimaali<br>
+        <input type="radio" name="round" value="1000"> 3 desimaali<br><br>
       </form> 
       <p id="demo"></p>
 
@@ -29,10 +29,15 @@
     var round = document.forms['tempForm']['round'].value;
     var temp = document.getElementById("temp").value;
 
-    // If-lause, joka tutkii, mikä muunnos pitää tehdä.
+    if(scale == "fc") {
+      var tulos = (temp - 32) / 1.8;
+    } else {
+      var tulos = (temp) * 1.8 + 32;
+    }
+    tulos = Math.round(tulos * round) / round;
 
-  document.getElementById("demo").innerHTML = temp;
-}
+    document.getElementById("demo").innerHTML = tulos;
+  }
   </script>
 </body>
 </html>
